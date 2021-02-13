@@ -46,7 +46,6 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(this.state.contacts.length)
         const normalizedFilter = this.state.filter.toLowerCase()
         const filteredElements = this.state.contacts.filter((contact) =>
             contact.name.toLowerCase().includes(normalizedFilter)
