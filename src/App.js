@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import ContactForm from './components/Contactform/ContactForm'
 import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
+import TestComments from './components/TestComments/TestComments'
 import styles from './App.module.css'
+import './App.css'
 
 export default class App extends Component {
     state = {
         contacts: [],
         filter: '',
+        // comments: false,
     }
     deleteContact = (contactId) => {
         this.setState((prevState) => ({
@@ -56,12 +60,31 @@ export default class App extends Component {
                     addContact={this.addContact}
                     contacts={this.state.contacts}
                 />
-                <h1>Contacts</h1>
-                <Filter value={this.state.filter} filter={this.contactFilter} />
+
+                {/* <h1>Contacts</h1> */}
+                {/* {this.state.contacts.length > 1 && ( */}
+                <CSSTransition
+                    in={this.state.contacts.length > 1}
+                    timeout={250}
+                    unmountOnExit
+                    classNames="App-notification-fade"
+                >
+                    <Filter
+                        value={this.state.filter}
+                        filter={this.contactFilter}
+                    />
+                </CSSTransition>
+                {/* )} */}
+
+                {/* <CSSTransition in={this.state.contacts}> */}
+
                 <ContactList
                     contacts={filteredElements}
                     deleteContact={this.deleteContact}
                 />
+                {/* </CSSTransition> */}
+
+                {/* <TestComments /> */}
             </div>
         )
     }

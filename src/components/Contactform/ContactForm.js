@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import styles from './ContactForm.module.css'
 import shortid from 'shortid'
+import './ContactForm.css'
+
 // import { Notification } from 'react-pnotify'
 
 export default class ContactForm extends Component {
@@ -92,7 +95,13 @@ export default class ContactForm extends Component {
                 >
                     Add contact
                 </button>
-                {this.state.alert && (
+                <CSSTransition
+                    in={this.state.alert}
+                    timeout={250}
+                    classNames="ContactForm-notification-fade"
+                    unmountOnExit
+                >
+                    {/* {this.state.alert && ( */}
                     <div className={styles.Notification}>
                         <h2>{sameContact} is already in contacts</h2>
                         <h3>Please check name and try again</h3>
@@ -104,7 +113,8 @@ export default class ContactForm extends Component {
                             Close Notification
                         </button>
                     </div>
-                )}
+                </CSSTransition>
+                {/* )} */}
             </div>
         )
     }
