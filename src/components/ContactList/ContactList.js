@@ -7,12 +7,11 @@ import './ContactList.css'
 export default function ContactList({ contacts, deleteContact }) {
     return (
         <div className={styles.Container}>
-            <TransitionGroup component="ul" classNames={styles.ListContainer}>
+            <TransitionGroup component="ul" classnames={styles.ListContainer}>
                 {contacts.map((contact) => (
                     <CSSTransition
                         timeout={250}
                         classNames="ContactList-item-fade"
-                        // classNames={styles.ContactListItemFade}
                         key={contact.id}
                     >
                         <li key={contact.id} className={styles.Contact}>

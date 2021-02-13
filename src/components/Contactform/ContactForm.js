@@ -5,8 +5,6 @@ import styles from './ContactForm.module.css'
 import shortid from 'shortid'
 import './ContactForm.css'
 
-// import { Notification } from 'react-pnotify'
-
 export default class ContactForm extends Component {
     static defaultProps = { addContact: '' }
     static propTypes = {}
@@ -101,7 +99,6 @@ export default class ContactForm extends Component {
                     classNames="ContactForm-notification-fade"
                     unmountOnExit
                 >
-                    {/* {this.state.alert && ( */}
                     <div className={styles.Notification}>
                         <h2>{sameContact} is already in contacts</h2>
                         <h3>Please check name and try again</h3>
@@ -114,7 +111,6 @@ export default class ContactForm extends Component {
                         </button>
                     </div>
                 </CSSTransition>
-                {/* )} */}
             </div>
         )
     }

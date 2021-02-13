@@ -11,7 +11,6 @@ export default class App extends Component {
     state = {
         contacts: [],
         filter: '',
-        // comments: false,
     }
     deleteContact = (contactId) => {
         this.setState((prevState) => ({
@@ -61,8 +60,6 @@ export default class App extends Component {
                     contacts={this.state.contacts}
                 />
 
-                {/* <h1>Contacts</h1> */}
-                {/* {this.state.contacts.length > 1 && ( */}
                 <CSSTransition
                     in={this.state.contacts.length > 1}
                     timeout={250}
@@ -74,17 +71,11 @@ export default class App extends Component {
                         filter={this.contactFilter}
                     />
                 </CSSTransition>
-                {/* )} */}
-
-                {/* <CSSTransition in={this.state.contacts}> */}
 
                 <ContactList
                     contacts={filteredElements}
                     deleteContact={this.deleteContact}
                 />
-                {/* </CSSTransition> */}
-
-                {/* <TestComments /> */}
             </div>
         )
     }
