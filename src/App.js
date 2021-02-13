@@ -3,7 +3,6 @@ import { CSSTransition } from 'react-transition-group'
 import ContactForm from './components/Contactform/ContactForm'
 import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
-import TestComments from './components/TestComments/TestComments'
 import styles from './App.module.css'
 import './App.css'
 
@@ -64,7 +63,12 @@ export default class App extends Component {
                     in={this.state.contacts.length > 1}
                     timeout={250}
                     unmountOnExit
-                    classNames="App-notification-fade"
+                    classNames={{
+                        enter: styles.AppNotificationFadeEnter,
+                        enterActive: styles.AppNotificationFadeEnterActive,
+                        exit: styles.AppNotificationFadeExit,
+                        exitActive: styles.AppNotificationFadeExitActive,
+                    }}
                 >
                     <Filter
                         value={this.state.filter}

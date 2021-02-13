@@ -43,3 +43,22 @@
     color: #ffffff;
     background-color: rgb(15, 163, 20);
 }
+
+.ContactFormNotificationFadeEnter {
+    opacity: 0;
+    transform: scale(0.1);
+}
+.ContactFormNotificationFadeEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 250ms linear;
+}
+.ContactFormNotificationFadeExit {
+    opacity: 1;
+    transform: scale(1);
+}
+.ContactFormNotificationFadeExitActive {
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all 250ms linear;
+}

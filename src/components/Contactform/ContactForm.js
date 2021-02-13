@@ -96,7 +96,14 @@ export default class ContactForm extends Component {
                 <CSSTransition
                     in={this.state.alert}
                     timeout={250}
-                    classNames="ContactForm-notification-fade"
+                    classNames={{
+                        enter: styles.ContactFormNotificationFadeEnter,
+                        enterActive:
+                            styles.ContactFormNotificationFadeEnterActive,
+                        exit: styles.ContactFormNotificationFadeExit,
+                        exitActive:
+                            styles.ContactFormNotificationFadeExitActive,
+                    }}
                     unmountOnExit
                 >
                     <div className={styles.Notification}>

@@ -11,7 +11,12 @@ export default function ContactList({ contacts, deleteContact }) {
                 {contacts.map((contact) => (
                     <CSSTransition
                         timeout={250}
-                        classNames="ContactList-item-fade"
+                        classNames={{
+                            enter: styles.ContactListItemFadeEnter,
+                            enterActive: styles.ContactListItemFadeEnterActive,
+                            exit: styles.ContactListItemFadeExit,
+                            exitActive: styles.ContactListItemFadeExitActive,
+                        }}
                         key={contact.id}
                     >
                         <li key={contact.id} className={styles.Contact}>

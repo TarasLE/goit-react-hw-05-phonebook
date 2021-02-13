@@ -11,3 +11,22 @@
     box-shadow: 1px 1px 3px 1px black, 1px 1px 3px 1px black,
         1px 1px 3px 1px black;
 }
+
+.AppNotificationFadeEnter {
+    opacity: 0;
+    transform: scale(0.1);
+}
+.AppNotificationFadeEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 250ms linear;
+}
+.AppNotificationFadeExit {
+    opacity: 1;
+    transform: scale(1);
+}
+.AppNotificationFadeExitActive {
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all 250ms linear;
+}
