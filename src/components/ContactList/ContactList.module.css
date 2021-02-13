@@ -1,0 +1,49 @@
+.Container {
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: black solid 1px;
+    background-color: rgba(232, 204, 45, 0.25);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    width: inherit;
+    text-decoration: dashed;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+.DeleteBtn {
+    background-color: rgba(232, 204, 45, 0.8);
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DeleteBtn:hover {
+    color: #ffffff;
+    background-color: red;
+}
+
+.ContactInfo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+}
