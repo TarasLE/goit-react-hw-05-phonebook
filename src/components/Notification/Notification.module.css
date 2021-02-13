@@ -20,3 +20,8 @@
     height: 50px;
     background-color: rgba(232, 204, 45, 0.8);
 }
+
+.FormBtn:hover {
+    color: #ffffff;
+    background-color: rgb(15, 163, 20);
+}
