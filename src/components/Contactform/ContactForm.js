@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import styles from './ContactForm.module.css'
 import shortid from 'shortid'
 import './ContactForm.css'
+import Notification from '../Notification/Notification'
 
 export default class ContactForm extends Component {
     static defaultProps = { addContact: '' }
@@ -48,8 +49,8 @@ export default class ContactForm extends Component {
                 )
             })
         ) {
-            this.notify()
-            // this.setState({ alert: true })
+            // this.notify()
+            this.setState({ alert: true })
             return true
         }
     }
@@ -111,24 +112,11 @@ export default class ContactForm extends Component {
                     }}
                     unmountOnExit
                 >
-                    <div className={styles.Notification}>
-                        <h2>{sameContact} is already in contacts</h2>
-                        <h3>Please check name and try again</h3>
-                        <button
-                            type="button"
-                            onClick={this.alertState}
-                            className={styles.FormBtn}
-                        >
-                            Close Notification
-                        </button>
-                    </div>
+                    <Notification
+                        alertstate={this.alertState}
+                        sameContact
+                    ></Notification>
                 </CSSTransition>
-                <ToastContainer
-                    position="top-center"
-                    autoClose={2000}
-                    hideProgressBar
-                    transition={Flip}
-                />
             </div>
         )
     }

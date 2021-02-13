@@ -46,6 +46,7 @@ export default class App extends Component {
     }
 
     render() {
+        console.log(this.state.contacts.length)
         const normalizedFilter = this.state.filter.toLowerCase()
         const filteredElements = this.state.contacts.filter((contact) =>
             contact.name.toLowerCase().includes(normalizedFilter)
@@ -71,25 +72,25 @@ export default class App extends Component {
 
                 <CSSTransition
                     in={this.state.contacts.length > 1}
-                    timeout={250}
-                    unmountOnExit
-                    classNames={{
-                        enter: styles.AppNotificationFadeEnter,
-                        enterActive: styles.AppNotificationFadeEnterActive,
-                        exit: styles.AppNotificationFadeExit,
-                        exitActive: styles.AppNotificationFadeExitActive,
-                    }}
+                    timeout={0}
+                    mountOnEnter
                 >
                     <Filter
+                        contacts={this.state.contacts}
                         value={this.state.filter}
                         filter={this.contactFilter}
                     />
                 </CSSTransition>
-
-                <ContactList
-                    contacts={filteredElements}
-                    deleteContact={this.deleteContact}
-                />
+                <CSSTransition
+                    in={this.state.contacts.length > 0}
+                    unmountOnExit
+                    timeout={0}
+                >
+                    <ContactList
+                        contacts={filteredElements}
+                        deleteContact={this.deleteContact}
+                    />
+                </CSSTransition>
             </div>
         )
     }

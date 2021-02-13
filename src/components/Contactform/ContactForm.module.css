@@ -1,5 +1,4 @@
 .Container {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -7,23 +6,6 @@
 
 .InputName {
     margin: 0;
-}
-
-.Notification {
-    padding: 30px;
-    position: absolute;
-    top: 100px;
-    left: calc(50% - 230px);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    background-color: rgba(0, 120, 201, 0.9);
-    width: 400px;
-    height: 200px;
-    z-index: 1;
 }
 
 .FormInput {

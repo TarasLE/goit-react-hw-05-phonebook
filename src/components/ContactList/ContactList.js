@@ -18,8 +18,9 @@ export default function ContactList({ contacts, deleteContact }) {
                             exitActive: styles.ContactListItemFadeExitActive,
                         }}
                         key={contact.id}
+                        unmountOnExit
                     >
-                        <li key={contact.id} className={styles.Contact}>
+                        <li className={styles.Contact}>
                             <span className={styles.ContactInfo}>
                                 {contact.name} : {contact.number}
                             </span>

@@ -26,3 +26,22 @@
     margin: 0;
     padding: 0;
 }
+
+.FilterFadeEnter {
+    opacity: 0;
+    transform: scale(0.1);
+}
+.FilterFadeEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 250ms linear;
+}
+.FilterFadeExit {
+    opacity: 1;
+    transform: scale(1);
+}
+.FilterFadeExitActive {
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all 250ms linear;
+}
