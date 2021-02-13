@@ -52,7 +52,17 @@ export default class App extends Component {
         )
         return (
             <div className={styles.Container}>
-                <h1>Phonebook</h1>
+                <CSSTransition
+                    in={true}
+                    appear={true}
+                    timeout={500}
+                    classNames={{
+                        appear: styles.HeaderFadeAppear,
+                        appearActive: styles.HeaderFadeAppearActive,
+                    }}
+                >
+                    <h1>Phonebook</h1>
+                </CSSTransition>
 
                 <ContactForm
                     addContact={this.addContact}

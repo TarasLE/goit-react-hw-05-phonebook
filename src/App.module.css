@@ -30,3 +30,12 @@
     transform: scale(0.1);
     transition: all 250ms linear;
 }
+
+.HeaderFadeAppear {
+    opacity: 0;
+}
+
+.HeaderFadeAppearActive {
+    opacity: 1;
+    transition: all 500ms linear;
+}
