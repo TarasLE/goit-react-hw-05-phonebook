@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import { ToastContainer, toast, Flip, Zoom, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import PropTypes from 'prop-types'
 import styles from './ContactForm.module.css'
 import shortid from 'shortid'
@@ -46,7 +48,8 @@ export default class ContactForm extends Component {
                 )
             })
         ) {
-            this.setState({ alert: true })
+            this.notify()
+            // this.setState({ alert: true })
             return true
         }
     }
@@ -58,6 +61,8 @@ export default class ContactForm extends Component {
     alertState = () => {
         this.setState({ alert: false })
     }
+
+    notify = () => toast.error('Contact already exists')
 
     render() {
         const sameContact = this.state.name
@@ -118,6 +123,12 @@ export default class ContactForm extends Component {
                         </button>
                     </div>
                 </CSSTransition>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar
+                    transition={Flip}
+                />
             </div>
         )
     }
