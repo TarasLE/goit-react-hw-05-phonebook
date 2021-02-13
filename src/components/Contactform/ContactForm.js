@@ -66,7 +66,6 @@ export default class ContactForm extends Component {
     notify = () => toast.error('Contact already exists')
 
     render() {
-        const sameContact = this.state.name
         return (
             <div className={styles.Container}>
                 <form>
@@ -114,7 +113,7 @@ export default class ContactForm extends Component {
                 >
                     <Notification
                         alertstate={this.alertState}
-                        sameContact
+                        sameContact={this.state.name}
                     ></Notification>
                 </CSSTransition>
             </div>
