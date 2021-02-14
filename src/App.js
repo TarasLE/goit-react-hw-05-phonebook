@@ -5,6 +5,7 @@ import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
 import './App.css'
+import { ENTERED } from 'react-transition-group/transition'
 
 export default class App extends Component {
     state = {
@@ -81,9 +82,9 @@ export default class App extends Component {
                     />
                 </CSSTransition>
                 <CSSTransition
-                    in={this.state.contacts.length > 0}
-                    timeout={0}
-                    mountOnEnter
+                    in={filteredElements.length > 0}
+                    timeout={250}
+                    unmountOnExit
                 >
                     <ContactList
                         contacts={filteredElements}
