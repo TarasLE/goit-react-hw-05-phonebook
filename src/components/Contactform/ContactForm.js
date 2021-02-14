@@ -45,7 +45,10 @@ export default class ContactForm extends Component {
         } else if (
             this.props.contacts.find((contact) => {
                 return (
-                    contact.name.toLowerCase() === this.state.name.toLowerCase()
+                    contact.name.toLowerCase() ===
+                        this.state.name.toLowerCase() &&
+                    contact.number.toLowerCase() ===
+                        this.state.number.toLowerCase()
                 )
             })
         ) {

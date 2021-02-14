@@ -70,9 +70,9 @@ export default class App extends Component {
                 />
 
                 <CSSTransition
-                    in={this.state.contacts.length > 1}
+                    in={this.state.contacts.length >= 1}
                     timeout={0}
-                    mountOnEnter
+                    unmountOnExit
                 >
                     <Filter
                         contacts={this.state.contacts}
@@ -82,8 +82,8 @@ export default class App extends Component {
                 </CSSTransition>
                 <CSSTransition
                     in={this.state.contacts.length > 0}
-                    mountOnEnter
                     timeout={0}
+                    unmountOnExit
                 >
                     <ContactList
                         contacts={filteredElements}
