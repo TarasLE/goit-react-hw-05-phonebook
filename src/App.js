@@ -82,7 +82,7 @@ export default class App extends Component {
                     />
                 </CSSTransition>
                 <CSSTransition
-                    in={filteredElements.length > 0}
+                    in={this.state.contacts.length > 0}
                     timeout={250}
                     unmountOnExit
                 >

@@ -52,8 +52,8 @@ export default class ContactForm extends Component {
                 )
             })
         ) {
-            // this.notify()
             this.setState({ alert: true })
+            this.alertState()
             return true
         }
     }
@@ -63,7 +63,9 @@ export default class ContactForm extends Component {
     }
 
     alertState = () => {
-        this.setState({ alert: false })
+        setTimeout(() => {
+            this.setState({ alert: false })
+        }, 2000)
     }
 
     notify = () => toast.error('Contact already exists')
@@ -114,10 +116,7 @@ export default class ContactForm extends Component {
                     }}
                     unmountOnExit
                 >
-                    <Notification
-                        alertstate={this.alertState}
-                        sameContact={this.state.name}
-                    ></Notification>
+                    <Notification sameContact={this.state.name}></Notification>
                 </CSSTransition>
             </div>
         )
