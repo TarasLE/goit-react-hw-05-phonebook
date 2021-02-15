@@ -23,21 +23,31 @@
     transition: all 500ms linear;
 }
 
-.ContactListItemFadeEnter {
+.ContactListFadeEnter {
     opacity: 0;
     transform: translateX(-100%);
 }
-.ContactListItemFadeEnterActive {
+.ContactListFadeEnterActive {
     opacity: 1;
     transform: translateX(0);
     transition: all 250ms linear;
 }
 
-.ContactListItemFadeAppear {
+.ContactListFadeExit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.ContactListFadeExitActive {
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 250ms linear;
+}
+
+.ContactListFadeAppear {
     opacity: 0;
     transform: translateX(-100%);
 }
-.ContactListItemFadeAppearActive {
+.ContactListFadeAppearActive {
     opacity: 1;
     transform: translateX(0);
     transition: all 250ms linear;

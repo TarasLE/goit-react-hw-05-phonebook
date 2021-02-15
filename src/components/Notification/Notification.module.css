@@ -2,7 +2,7 @@
     padding: 30px;
     position: absolute;
     top: 100px;
-    left: 35%;
+    left: calc(50% - 205px);
     display: flex;
     flex-direction: column;
     text-align: center;

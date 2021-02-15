@@ -5,7 +5,7 @@ import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
 import './App.css'
-import { ENTERED } from 'react-transition-group/transition'
+import Transition, { ENTERED } from 'react-transition-group/transition'
 
 export default class App extends Component {
     state = {

@@ -63,7 +63,7 @@ li {
 .ContactListItemFadeExit {
     opacity: 1;
     transform: translateX(0);
-    transform: scale(1);
+    /* transform: all 250ms linear; */
 }
 .ContactListItemFadeExitActive {
     opacity: 0;
