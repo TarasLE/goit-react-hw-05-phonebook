@@ -5,7 +5,6 @@ import ContactList from './components/ContactList/ContactList'
 import Filter from './components/Filter/Filter'
 import styles from './App.module.css'
 import './App.css'
-import Transition, { ENTERED } from 'react-transition-group/transition'
 
 export default class App extends Component {
     state = {
@@ -18,6 +17,9 @@ export default class App extends Component {
                 (contact) => contact.id != contactId
             ),
         }))
+        if (this.state.contacts.length == 2) {
+            this.setState({ filter: '' })
+        }
     }
 
     addContact = (contact) => {

@@ -68,8 +68,6 @@ export default class ContactForm extends Component {
         }, 2000)
     }
 
-    notify = () => toast.error('Contact already exists')
-
     render() {
         return (
             <div className={styles.Container}>
