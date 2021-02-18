@@ -3,7 +3,6 @@ import styles from './Notification.module.css'
 import PropTypes from 'prop-types'
 
 Notification.propTypes = {
-    alertstate: PropTypes.func.isRequired,
     sameContact: PropTypes.string.isRequired,
 }
 
